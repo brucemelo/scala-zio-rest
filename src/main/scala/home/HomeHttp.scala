@@ -5,7 +5,7 @@ import zhttp.http._
 import zio._
 import zio.json._
 
-object HomeApp {
+object HomeHttp {
 
   def apply(): Http[Any, Nothing, Request, Response] =
     Http.collectHttp[Request] {

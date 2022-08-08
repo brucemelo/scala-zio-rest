@@ -6,7 +6,7 @@ import zhttp.http._
 import zio._
 import zio.json._
 
-object StudentApp {
+object StudentHttp {
   def apply(): Http[StudentRepo, Throwable, Request, Response] =
     Http.collectZIO[Request] {
       // POST /users -d '{"name": "John", "age": 35}'
