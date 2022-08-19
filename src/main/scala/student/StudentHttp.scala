@@ -9,7 +9,6 @@ import zio.json._
 object StudentHttp {
   def apply(): Http[StudentRepo, Throwable, Request, Response] =
     Http.collectZIO[Request] {
-      // POST /users -d '{"name": "John", "age": 35}'
       case req@(Method.POST -> _ / "students") =>
         for {
           u <- req.bodyAsString.map(_.fromJson[Student])
